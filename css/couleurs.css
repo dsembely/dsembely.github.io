@@ -15,9 +15,9 @@
 /* Fond et couleur globaux */
 
 :root {
-  --couleur-fond: #f5f9f8;/*#F5FBF9; #F6FAF5;*/
-  --couleur-menu-1: #CFEAEB;/*#A8DADC;*/
-  --couleur-menu-2: #00A3A8;/*#00AAAF;*/
+  --couleur-fond: #EDF5F4;/*#f5f9f8; #F6FAF5;*/
+  --couleur-menu-1: #BFDADB;/*#A8DADC;*/
+  --couleur-menu-2: #018A8F;/*#00AAAF;*/
   --couleur-texte: #3D4449;
   --couleur-lien: #A8004F;
   --couleur-lien-visite: #7B2D52;/*743452;*/
