@@ -1,53 +1,155 @@
-/* Feuille de style des couleurs */
-/* 
-
-#2C2302 couleur marron de fond
-#322b16 marron plus clair pour les titres
-
-#F2F2EE fond beige; F4F4F1
-#E3E7D9 beige plus soutenu pour les menus #E1E7DC
-#89B8B6 bleu pour les titres des menus
-
-#4B708D bleu clair pour les liens
-#785CA8 un violet pour les liens visités
-
-
-/* Fond et couleur globaux */
+/* =========================================================
+   MATHS PTSI2
+   Couleurs
+   ========================================================= */
 
 :root {
-  --couleur-fond: #EDF5F4;/*#f5f9f8; #F6FAF5;*/
-  --couleur-menu-1: #BFDADB;/*#A8DADC;*/
-  --couleur-menu-2: #018A8F;/*#00AAAF;*/
-  --couleur-texte: #3D4449;
-  --couleur-lien: #A8004F;
-  --couleur-lien-visite: #7B2D52;/*743452;*/
+    --fond: #EDF5F4;
+
+    --turquoise: #018A8F;
+    --turquoise-clair: #BFDADB;
+    --turquoise-tres-clair: rgba(1, 138, 143, 0.08);
+
+    --texte: #3D4449;
+    --texte-secondaire: #68777B;
+
+    --magenta: #A8004F;
+    --magenta-visite: #7B2D52;
+
+    --blanc: #FFFFFF;
 }
 
-body { color: var(--couleur-texte); background-color: var(--couleur-fond); }
 
-/* Liens décolorés */
-h3 a { color: var(--couleur-texte); } /* 
+/* ---------------------------------------------------------
+   GLOBAL
+   --------------------------------------------------------- */
 
-/* titres */
-h2, h3 {color : var(--couleur-lien); }
+body {
+    color: var(--texte);
+    background-color: var(--fond);
+}
 
-/* liens */
-a { color: var(--couleur-lien); }
-a:visited {color : var(--couleur-lien);}
 
-/* Menu */
-#haut { color: var(--couleur-texte); background-color: var(--couleur-menu-2);  }
+/* ---------------------------------------------------------
+   LIENS
+   --------------------------------------------------------- */
 
-#menu, #recent { background-color: var(--couleur-menu-1); } 
+a {
+    color: var(--magenta);
+}
 
-#menu h3, #recent h3 { background-color: var(--couleur-menu-2);} 
+a:visited {
+    color: var(--magenta-visite);
+}
 
-#menu a, #menu p, #recent a { color: var(--couleur-menu-1); }
+a:hover {
+    color: var(--turquoise);
+}
 
-/* texte menu F2 */
 
-#menu a:hover { color: var(--couleur-menu-2); }
+/* ---------------------------------------------------------
+   TITRES
+   --------------------------------------------------------- */
 
-#menu h3 a:hover { color: var(--couleur-lien); }
+h2,
+h3 {
+    color: var(--magenta);
+}
 
-#recent a:hover { color: var(--couleur-menu-2); }
+
+/* ---------------------------------------------------------
+   BANDEAU
+   --------------------------------------------------------- */
+
+#haut {
+    color: var(--blanc);
+    background-color: var(--turquoise);
+}
+
+
+/* ---------------------------------------------------------
+   MENU
+   --------------------------------------------------------- */
+
+#menu {
+    background-color: transparent;
+    border-left-color: var(--turquoise);
+}
+
+#menu a {
+    color: var(--texte);
+}
+
+#menu a:hover {
+    color: var(--turquoise);
+    background-color: var(--turquoise-tres-clair);
+}
+
+
+/* Page active */
+
+#menu div:nth-child(4) a {
+    color: var(--magenta);
+    background-color: rgba(168, 0, 79, 0.06);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENU
+   --------------------------------------------------------- */
+
+#contenu h3 {
+    color: var(--magenta);
+}
+
+#contenu h3::after {
+    background-color: var(--turquoise);
+}
+
+#contenu h3 small {
+    color: var(--texte-secondaire);
+}
+
+
+/* ---------------------------------------------------------
+   LIENS DES DOCUMENTS
+   --------------------------------------------------------- */
+
+#contenu a {
+    color: var(--magenta);
+}
+
+#contenu a:hover {
+    color: var(--turquoise);
+}
+
+
+/* ---------------------------------------------------------
+   LISTES
+   --------------------------------------------------------- */
+
+#contenu li::marker {
+    color: var(--turquoise);
+}
+
+
+/* ---------------------------------------------------------
+   ANCIEN MODULE "RECENT"
+   --------------------------------------------------------- */
+
+#recent {
+    background-color: rgba(191, 218, 219, 0.65);
+}
+
+#recent h3 {
+    color: var(--blanc);
+    background-color: var(--turquoise);
+}
+
+#recent a {
+    color: var(--texte);
+}
+
+#recent a:hover {
+    color: var(--turquoise);
+}

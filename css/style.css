@@ -1,39 +1,320 @@
-/* Feuille de style général : tailles et positionnements */
+/* =========================================================
+MATHS PTSI2
+Style moderne, sobre et éditorial
+========================================================= */
 
-/* Police et taille globales */
-html,body { height: 100%; }
-body { font-size: 100%; font-family: 'Open Sans' , sans-serif; position: relative; margin: 0; min-width: 900px;  background-image:url(courbe6.png); background-repeat:no-repeat; 
-    background-size= 400px 400px;  ; background-position:right top}
-/* background-origin= content-box */
+/* ---------------------------------------------------------
+BASE
+--------------------------------------------------------- */
 
-#global { position: relative; min-height: 100%; font-weight: normal }
+html,
+body {
+height: 100%;
+}
 
-/* Positionnements principaux */
-/* background-color: #A4C6C0; */
-h3 { font-family: 'Roboto Slab' , serif; font-size: 1.2em; margin: 0.8em 2% 0; padding: 0; }
-#montitre {  font-size: 1.2em;color: #BFDADB;border-radius: 0.2em; margin: 0 5% 0.5em; padding: 0.2em 5px ; display : inline ; font-family: 'Roboto Slab' , serif; font-weight: 600}
-ul { margin: 0.5em 2%; padding: 0 4% 0 6%; }
-p { margin: 0.5em 2%; padding: 0 4%; }
-div, form { margin: 0; padding: 0; }
-#colonne { width: 210px; float: left; margin: -1em 30px 3em; }
-#menu, #recent { padding: 1em 10px; border-radius: 0.2em;}
-#recent { margin-top: 2em; }
-#contenu { position: relative; margin: 0 30px 4em 190px; padding: 0 20px; }
-#haut {font-size: 1.7em; text-align: center; padding: 1em 0; margin-bottom: 2em }
+body {
+margin: 0;
+min-width: 900px;
 
-/* Liens non soulignés */
-.prec, .suiv, h3 a, #menu a, #recent a, #bas a { text-decoration: none; }
+font-family: 'Open Sans', sans-serif;
+font-size: 100%;
+line-height: 1.65;
 
-/* Dans le menu et dans les informations récentes */
-#menu div+div { margin-top: 0.3em; padding-top: 0.5em; }
-#menu h3, #recent h3 { text-align: center; margin: 0 5% 0.5em; padding: 0.2em 5px; border-radius: 0.2em;}
-#menu h4 { text-align: center; margin: 0; }
-#menu a, #recent a { text-align: center; display: block; margin-bottom: 0.2em; padding: 0; }
-#menu a.ligne { text-align: center; display: inline !important; }
-#menu p.menusupp {text-align: center;  margin: 0 3% 0.3em; font-size: 0.9em; }
-#menu p { text-align: center; padding: 0.1em 0px; }
-#actuel { font-style: italic; }
-#rss { display: inline !important; margin: 0 !important; vertical-align: top; }
-#rss img { height: 1.1em; }
+color: #3D4449;
+background-color: #EDF5F4;
 
+/* Courbe originale conservée */
+background-image: url(courbe6.png);
+background-repeat: no-repeat;
+background-size: 400px 400px;
+background-position: right 20px top 10px;
 
+}
+
+#global {
+position: relative;
+min-height: 100%;
+}
+
+/* ---------------------------------------------------------
+EN-TÊTE
+--------------------------------------------------------- */
+
+#haut {
+font-size: 1.65em;
+text-align: center;
+
+padding: 0.75em 0;
+margin-bottom: 2.5em;
+
+border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+}
+
+#montitre {
+display: inline;
+
+font-family: 'Roboto Slab', serif;
+font-size: 1.15em;
+font-weight: 600;
+
+color: #FFFFFF;
+
+}
+
+/* ---------------------------------------------------------
+STRUCTURE PRINCIPALE
+--------------------------------------------------------- */
+
+#colonne {
+float: left;
+
+width: 185px;
+
+margin: 0 0 3em 35px;
+
+}
+
+#contenu {
+margin-left: 260px;
+margin-right: 60px;
+
+padding: 0 20px 4em 15px;
+
+}
+
+/* ---------------------------------------------------------
+MENU
+--------------------------------------------------------- */
+
+#menu {
+padding: 8px 0;
+
+border-left: 3px solid #018A8F;
+
+}
+
+/* Chaque entrée */
+
+#menu div {
+margin: 2px 0;
+}
+
+/* Titres du menu */
+
+#menu h3 {
+margin: 0;
+padding: 0;
+
+font-family: 'Open Sans', sans-serif;
+font-size: 1em;
+font-weight: 600;
+
+}
+
+/* Liens */
+
+#menu a {
+display: block;
+
+padding: 8px 14px;
+
+border-radius: 0 6px 6px 0;
+
+text-decoration: none;
+
+transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+
+}
+
+/* Survol */
+
+#menu a:hover {
+padding-left: 19px;
+}
+
+/* Page actuelle */
+
+#menu div:nth-child(4) a {
+font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+CONTENU
+--------------------------------------------------------- */
+
+#contenu > div {
+max-width: 850px;
+
+padding: 0 0 2em 0;
+
+/* Pas de carte blanche */
+background: transparent;
+
+/* Pas d'ombre */
+box-shadow: none;
+
+}
+
+/* ---------------------------------------------------------
+TITRES DE SECTIONS
+--------------------------------------------------------- */
+
+#contenu h3 {
+position: relative;
+
+margin: 0 0 1em 0;
+padding: 0 0 0.45em 0;
+
+font-family: 'Roboto Slab', serif;
+font-size: 1.35em;
+font-weight: 600;
+
+border-bottom: 3px solid #018A8F;
+
+}
+
+/* Espacement entre les sections */
+
+#contenu h3:not(:first-child) {
+margin-top: 2.7em;
+}
+
+/* Sous-titre du cahier de vacances */
+
+#contenu h3 small {
+font-family: 'Open Sans', sans-serif;
+font-size: 0.68em;
+font-weight: 400;
+
+color: #68777B;
+
+}
+
+/* ---------------------------------------------------------
+LISTES
+--------------------------------------------------------- */
+
+#contenu ul {
+margin: 0;
+padding-left: 1.4em;
+}
+
+#contenu li {
+margin: 0.8em 0;
+padding-left: 0.3em;
+}
+
+/* Puce */
+
+#contenu li::marker {
+color: #018A8F;
+}
+
+/* ---------------------------------------------------------
+LIENS DU CONTENU
+--------------------------------------------------------- */
+
+#contenu a {
+font-weight: 600;
+text-decoration: none;
+
+transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+}
+
+#contenu a:hover {
+text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+ÉLÉMENTS EXISTANTS DU SITE
+--------------------------------------------------------- */
+
+#recent {
+margin-top: 2em;
+padding: 1em 10px;
+
+border-radius: 8px;
+
+}
+
+#recent h3 {
+text-align: center;
+margin: 0 5% 0.5em;
+padding: 0.2em 5px;
+}
+
+#recent a {
+text-decoration: none;
+}
+
+#menu h4 {
+text-align: center;
+margin: 0;
+}
+
+#menu p {
+text-align: center;
+padding: 0.1em 0;
+}
+
+#menu p.menusupp {
+margin: 0 3% 0.3em;
+font-size: 0.9em;
+}
+
+#actuel {
+font-style: italic;
+}
+
+#rss {
+display: inline !important;
+margin: 0 !important;
+vertical-align: top;
+}
+
+#rss img {
+height: 1.1em;
+}
+
+/* ---------------------------------------------------------
+ANCIENS ÉLÉMENTS DE NAVIGATION
+--------------------------------------------------------- */
+
+.prec,
+.suiv,
+h3 a,
+#menu a,
+#recent a,
+#bas a {
+text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+ÉCRANS PLUS PETITS
+--------------------------------------------------------- */
+
+@media screen and (max-width: 1000px) {
+
+#colonne {
+    margin-left: 20px;
+    width: 170px;
+}
+
+#contenu {
+    margin-left: 215px;
+    margin-right: 25px;
+    padding-left: 15px;
+}
+
+body {
+    background-size: 320px 320px;
+}
+
+}
