@@ -13,27 +13,25 @@ height: 100%;
 }
 
 body {
-margin: 0;
-min-width: 900px;
+    margin: 0;
+    min-width: 900px;
 
-font-family: 'Open Sans', sans-serif;
-font-size: 100%;
-line-height: 1.65;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    line-height: 1.65;
 
-color: #3D4449;
-background-color: #EDF5F4;
+    color: #3D4449;
+    background-color: #EDF5F4;
 
-/* Courbe originale conservée */
-background-image: url(courbe6.png);
-background-repeat: no-repeat;
-background-size: 400px 400px;
-background-position: right 20px top 10px;
-
+    background-image: url(courbe6.png);
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    background-position: right 20px top 10px;
 }
 
 #global {
-position: relative;
-min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 /* ---------------------------------------------------------
@@ -41,25 +39,30 @@ EN-TÊTE
 --------------------------------------------------------- */
 
 #haut {
-font-size: 1.65em;
-text-align: center;
+    position: relative;
+    z-index: 1;
 
-padding: 0.75em 0;
-margin-bottom: 2.5em;
+    font-size: 1.65em;
+    text-align: center;
 
-border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.75em 0;
+    margin-bottom: 2.5em;
 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* Le fond laisse apparaître légèrement la courbe */
+    background-color: rgba(237, 245, 244, 0.78);
 }
 
+
 #montitre {
-display: inline;
+    display: inline;
 
-font-family: 'Roboto Slab', serif;
-font-size: 1.15em;
-font-weight: 600;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.15em;
+    font-weight: 600;
 
-color: #FFFFFF;
-
+    color: var(--turquoise);
 }
 
 /* ---------------------------------------------------------
@@ -88,64 +91,79 @@ MENU
 --------------------------------------------------------- */
 
 #menu {
-padding: 8px 0;
+    position: relative;
 
-border-left: 3px solid var(--turquoise);
+    padding: 8px 0;
 
+    /* La ligne n'est plus une bordure du menu */
 }
+
+/* Ligne turquoise verticale */
+#menu::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+
+    width: 3px;
+
+    background-color: var(--turquoise);
+}
+
 
 /* Chaque entrée */
 
 #menu div {
-margin: 2px 0;
+    margin: 2px 0;
 }
 
 /* Titres du menu */
 
 #menu h3 {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 
-font-family: 'Open Sans', sans-serif;
-font-size: 1em;
-font-weight: 600;
-
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 /* Liens */
 
 #menu a {
-display: block;
+    display: block;
 
-padding: 8px 14px;
+    padding: 8px 14px;
 
-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
 
-text-decoration: none;
+    text-decoration: none;
 
-transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    padding-left 0.2s ease;
-
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        padding-left 0.2s ease;
 }
 
 /* Survol */
 
 #menu a:hover {
-padding-left: 19px;
+    padding-left: 19px;
 }
 
 /* Rubrique actuellement ouverte */
 
 #menu a#actuel {
-font-weight: 600;
-color: #FFFFFF;
-background-color: var(--turquoise);
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--turquoise);
 }
 
 #menu a#actuel:hover {
-padding-left: 14px;
+    padding-left: 14px;
 }
 
 /* ---------------------------------------------------------
@@ -320,8 +338,10 @@ text-decoration: none;
         line-height: 1.65;
 
         /* La courbe devient discrète sur smartphone */
-        background-size: 180px 180px;
-        background-position: right 5px top 5px;
+       /* background-size: 180px 180px;
+        background-position: right 5px top 5px;*/
+        background-size: 400px 400px;
+background-position: right 20px top 10px;
     }
 
 
@@ -376,31 +396,42 @@ text-decoration: none;
         display: flex;
         flex-wrap: wrap;
 
-        gap: 4px;
+        gap: 2px;
     }
+    
+    #menu::before {
+    display: none;
+}
 
     #menu div {
         margin: 0;
     }
 
     #menu h3 {
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
 
     #menu a {
-        padding: 8px 11px;
+    padding: 7px 8px;
 
-        border-radius: 5px;
+    /* Pas d'arrondi en haut, arrondi en bas */
+    border-radius: 0 0 5px 5px;
 
-        white-space: nowrap;
-    }
+    white-space: nowrap;
+}
 
     #menu a:hover {
-        padding-left: 11px;
+        padding-left: 8px;
+    }
+
+    /* Rubrique actuelle :
+       pas d'arrondi contre la ligne turquoise */
+    #menu a#actuel {
+        border-radius: 0 0 5px 5px;
     }
 
     #menu a#actuel:hover {
-        padding-left: 11px;
+        padding-left: 8px;
     }
 
 
@@ -451,6 +482,7 @@ text-decoration: none;
     }
 
 }
+
 
 /* ---------------------------------------------------------
    ÉCRANS INTERMÉDIAIRES

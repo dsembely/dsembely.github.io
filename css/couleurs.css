@@ -8,7 +8,7 @@
 
     --turquoise: #018A8F; /* #017E82 ou #017276 */
     --turquoise-clair: #BFDADB;
-    --turquoise-tres-clair: rgba(1, 138, 143, 0.08);
+    --turquoise-tres-clair: rgba(1, 138, 143, 0.25);
 
     --texte: #3D4449;
     --texte-secondaire: #68777B;
@@ -63,7 +63,9 @@ h3 {
 
 #haut {
     color: var(--blanc);
-    background-color: var(--turquoise);
+
+    /* Le turquoise reste présent, mais laisse apparaître la courbe */
+    background-color: rgba(1, 138, 143, 0.25);
 }
 
 
