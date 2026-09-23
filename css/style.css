@@ -90,7 +90,7 @@ MENU
 #menu {
 padding: 8px 0;
 
-border-left: 3px solid #018A8F;
+border-left: 3px solid var(--turquoise);
 
 }
 
@@ -136,10 +136,16 @@ transition:
 padding-left: 19px;
 }
 
-/* Page actuelle */
+/* Rubrique actuellement ouverte */
 
-#menu div:nth-child(4) a {
+#menu a#actuel {
 font-weight: 600;
+color: #FFFFFF;
+background-color: var(--turquoise);
+}
+
+#menu a#actuel:hover {
+padding-left: 14px;
 }
 
 /* ---------------------------------------------------------
@@ -173,7 +179,7 @@ font-family: 'Roboto Slab', serif;
 font-size: 1.35em;
 font-weight: 600;
 
-border-bottom: 3px solid #018A8F;
+border-bottom: 3px solid var(--turquoise);
 
 }
 
@@ -211,7 +217,7 @@ padding-left: 0.3em;
 /* Puce */
 
 #contenu li::marker {
-color: #018A8F;
+color: var(--turquoise);
 }
 
 /* ---------------------------------------------------------
@@ -270,7 +276,7 @@ font-size: 0.9em;
 }
 
 #actuel {
-font-style: italic;
+font-style: normal;
 }
 
 #rss {
@@ -297,24 +303,174 @@ text-decoration: none;
 }
 
 /* ---------------------------------------------------------
-ÉCRANS PLUS PETITS
---------------------------------------------------------- */
+   VERSION MOBILE
+   --------------------------------------------------------- */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
 
-#colonne {
-    margin-left: 20px;
-    width: 170px;
+    html,
+    body {
+        height: auto;
+    }
+
+    body {
+        min-width: 0;
+
+        font-size: 100%;
+        line-height: 1.65;
+
+        /* La courbe devient discrète sur smartphone */
+        background-size: 180px 180px;
+        background-position: right 5px top 5px;
+    }
+
+
+    /* -----------------------------------------------------
+       EN-TÊTE
+       ----------------------------------------------------- */
+
+    #haut {
+        font-size: 1.25em;
+
+        padding: 0.8em 15px;
+        margin-bottom: 1.5em;
+    }
+
+    #montitre {
+        font-size: 1.1em;
+    }
+
+
+    /* -----------------------------------------------------
+       STRUCTURE
+       ----------------------------------------------------- */
+
+    #colonne {
+        float: none;
+
+        width: auto;
+
+        margin: 0 15px 1.5em 15px;
+    }
+
+    #contenu {
+        margin: 0;
+        padding: 0 15px 3em 15px;
+    }
+
+    #contenu > div {
+        max-width: none;
+    }
+
+
+    /* -----------------------------------------------------
+       MENU
+       ----------------------------------------------------- */
+
+    #menu {
+        padding: 0;
+
+        border-left: none;
+        border-top: 3px solid #018A8F;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
+
+    #menu div {
+        margin: 0;
+    }
+
+    #menu h3 {
+        font-size: 0.95em;
+    }
+
+    #menu a {
+        padding: 8px 11px;
+
+        border-radius: 5px;
+
+        white-space: nowrap;
+    }
+
+    #menu a:hover {
+        padding-left: 11px;
+    }
+
+    #menu a#actuel:hover {
+        padding-left: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENU
+       ----------------------------------------------------- */
+
+    #contenu h3 {
+        font-size: 1.25em;
+
+        margin-bottom: 0.9em;
+    }
+
+    #contenu h3:not(:first-child) {
+        margin-top: 2.2em;
+    }
+
+    #contenu h3 small {
+        display: block;
+
+        margin-top: 0.25em;
+
+        font-size: 0.72em;
+    }
+
+
+    /* -----------------------------------------------------
+       LISTES
+       ----------------------------------------------------- */
+
+    #contenu ul {
+        padding-left: 1.3em;
+    }
+
+    #contenu li {
+        margin: 0.65em 0;
+        padding-left: 0.2em;
+    }
+
+
+    /* -----------------------------------------------------
+       RECENT
+       ----------------------------------------------------- */
+
+    #recent {
+        margin-top: 1.5em;
+        padding: 0.8em 8px;
+    }
+
 }
 
-#contenu {
-    margin-left: 215px;
-    margin-right: 25px;
-    padding-left: 15px;
-}
+/* ---------------------------------------------------------
+   ÉCRANS INTERMÉDIAIRES
+   --------------------------------------------------------- */
 
-body {
-    background-size: 320px 320px;
-}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+
+    #colonne {
+        margin-left: 20px;
+        width: 170px;
+    }
+
+    #contenu {
+        margin-left: 215px;
+        margin-right: 25px;
+        padding-left: 15px;
+    }
+
+    body {
+        background-size: 320px 320px;
+    }
 
 }

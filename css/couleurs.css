@@ -6,7 +6,7 @@
 :root {
     --fond: #EDF5F4;
 
-    --turquoise: #018A8F;
+    --turquoise: #018A8F; /* #017E82 ou #017276 */
     --turquoise-clair: #BFDADB;
     --turquoise-tres-clair: rgba(1, 138, 143, 0.08);
 
@@ -88,10 +88,10 @@ h3 {
 
 /* Page active */
 
-#menu div:nth-child(4) a {
+/* #menu div:nth-child(4) a {
     color: var(--magenta);
     background-color: rgba(168, 0, 79, 0.06);
-}
+} */
 
 
 /* ---------------------------------------------------------
