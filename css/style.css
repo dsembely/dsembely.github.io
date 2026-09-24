@@ -105,8 +105,8 @@ MENU
     position: absolute;
 
     left: 0;
-    top: 10px;
-    bottom: 10px;
+    top: 8px;
+    bottom: 8px;
 
     width: 3px;
 
@@ -117,7 +117,7 @@ MENU
 /* Chaque entrée */
 
 #menu div {
-    margin: 2px 0;
+    margin: 0;/*2px 0;*/
 }
 
 /* Titres du menu */
@@ -225,17 +225,20 @@ LISTES
 #contenu ul {
 margin: 0;
 padding-left: 1.4em;
+list-style-type: disc;
 }
 
 #contenu li {
 margin: 0.8em 0;
 padding-left: 0.3em;
+list-style-type: disc;
 }
 
 /* Puce */
 
 #contenu li::marker {
 color: var(--turquoise);
+list-style-type: disc;
 }
 
 /* ---------------------------------------------------------
@@ -396,7 +399,7 @@ background-position: right 20px top 10px;
         display: flex;
         flex-wrap: wrap;
 
-        gap: 2px;
+        gap: 0;/*2px;*/
     }
     
     #menu::before {
@@ -405,6 +408,7 @@ background-position: right 20px top 10px;
 
     #menu div {
         margin: 0;
+            flex: 1 1 0;
     }
 
     #menu h3 {
@@ -418,6 +422,8 @@ background-position: right 20px top 10px;
     border-radius: 0 0 5px 5px;
 
     white-space: nowrap;
+    text-align: center;
+
 }
 
     #menu a:hover {
@@ -464,11 +470,13 @@ background-position: right 20px top 10px;
 
     #contenu ul {
         padding-left: 1.3em;
+        list-style-type: disc;
     }
 
     #contenu li {
         margin: 0.65em 0;
         padding-left: 0.2em;
+        list-style-type: disc;
     }
 
 
